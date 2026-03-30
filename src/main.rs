@@ -23,6 +23,13 @@ mod _10_error_handling;
 mod _11_generics;
 mod _12_traits;
 mod _13_lifetimes;
+mod _14_iterator;
+mod _15_file_io;
+mod _16_oo;
+mod _17_concurrency;
+mod _18_macros;
+mod _19_smart_pointers;
+mod _20_async;
 
 fn main() {
     println!("╔════════════════════════════════════════════════════════════╗");
@@ -94,6 +101,41 @@ fn main() {
     println!("▶ 运行示例 13 - 生命周期");
     println!("{}", "─".repeat(60));
     _13_lifetimes::run();
+    println!("\n");
+
+    println!("▶ 运行示例 14 - 迭代器");
+    println!("{}", "─".repeat(60));
+    _14_iterator::run();
+    println!("\n");
+
+    println!("▶ 运行示例 15 - 文件与IO");
+    println!("{}", "─".repeat(60));
+    _15_file_io::run();
+    println!("\n");
+
+    println!("▶ 运行示例 16 - 面向对象");
+    println!("{}", "─".repeat(60));
+    _16_oo::run();
+    println!("\n");
+
+    println!("▶ 运行示例 17 - 并发编程");
+    println!("{}", "─".repeat(60));
+    _17_concurrency::run();
+    println!("\n");
+
+    println!("▶ 运行示例 18 - 宏");
+    println!("{}", "─".repeat(60));
+    _18_macros::run();
+    println!("\n");
+
+    println!("▶ 运行示例 19 - 智能指针");
+    println!("{}", "─".repeat(60));
+    _19_smart_pointers::run();
+    println!("\n");
+
+    println!("▶ 运行示例 20 - 异步编程");
+    println!("{}", "─".repeat(60));
+    _20_async::run();
     println!("\n");
 
     println!("╔════════════════════════════════════════════════════════════╗");
