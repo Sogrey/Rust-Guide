@@ -2,6 +2,8 @@
 // 04_control_flow.rs - Rust 流程控制详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 流程控制学习 ===\n");
 

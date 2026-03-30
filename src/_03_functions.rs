@@ -2,6 +2,8 @@
 // 03_functions.rs - Rust 函数详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 函数学习 ===\n");
 

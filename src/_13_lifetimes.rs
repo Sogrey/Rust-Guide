@@ -2,6 +2,8 @@
 // 13_lifetimes.rs - Rust 生命周期详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables, unused_assignments)]
+
 pub fn run() {
     println!("=== Rust 生命周期学习 ===\n");
 

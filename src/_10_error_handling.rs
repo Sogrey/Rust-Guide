@@ -2,6 +2,8 @@
 // 10_error_handling.rs - Rust 错误处理详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables, unused_imports)]
+
 pub fn run() {
     println!("=== Rust 错误处理学习 ===\n");
 

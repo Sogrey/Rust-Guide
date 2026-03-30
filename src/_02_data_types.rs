@@ -2,6 +2,8 @@
 // 02_data_types.rs - Rust 数据类型详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables, unused_parens)]
+
 pub fn run() {
     println!("=== Rust 数据类型学习 ===\n");
 

@@ -2,6 +2,8 @@
 // 12_traits.rs - Rust Trait 详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust Trait 学习 ===\n");
 

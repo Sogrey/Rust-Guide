@@ -2,6 +2,8 @@
 // 01_variables.rs - Rust 变量详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 变量学习 ===\n");
 

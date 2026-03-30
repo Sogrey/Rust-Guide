@@ -2,6 +2,8 @@
 // 09_modules.rs - Rust 包和模块详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 包和模块学习 ===\n");
 

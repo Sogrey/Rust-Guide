@@ -2,6 +2,8 @@
 // 08_collections.rs - Rust 常见集合详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 常见集合学习 ===\n");
 

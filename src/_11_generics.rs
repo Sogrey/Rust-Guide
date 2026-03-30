@@ -2,6 +2,8 @@
 // 11_generics.rs - Rust 泛型详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 泛型学习 ===\n");
 

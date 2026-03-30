@@ -2,6 +2,8 @@
 // 06_structs.rs - Rust 结构体详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 结构体学习 ===\n");
 

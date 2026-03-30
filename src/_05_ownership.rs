@@ -2,6 +2,8 @@
 // 05_ownership.rs - Rust 所有权详解
 // ============================================================================
 
+#![allow(dead_code, unused_variables)]
+
 pub fn run() {
     println!("=== Rust 所有权学习 ===\n");
 
