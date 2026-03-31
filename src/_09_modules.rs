@@ -340,6 +340,7 @@ pub fn run() {
     #[cfg(test)]
     mod tests {
         use super::*;
+        use super::utils::math;
         
         #[test]
         fn test_add() {
