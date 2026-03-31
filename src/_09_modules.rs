@@ -293,35 +293,9 @@ pub fn run() {
     // -------------------------------------------------------------------------
     println!("\n【12. 模块示例 - 工具库】\n");
     
-    mod utils {
-        pub mod math {
-            pub fn add(a: i32, b: i32) -> i32 {
-                a + b
-            }
-            
-            pub fn multiply(a: i32, b: i32) -> i32 {
-                a * b
-            }
-            
-            pub fn factorial(n: u64) -> u64 {
-                if n <= 1 { 1 } else { n * factorial(n - 1) }
-            }
-        }
-        
-        pub mod string_utils {
-            pub fn reverse(s: &str) -> String {
-                s.chars().rev().collect()
-            }
-            
-            pub fn is_palindrome(s: &str) -> bool {
-                let reversed: String = s.chars().rev().collect();
-                s.eq_ignore_ascii_case(&reversed)
-            }
-        }
-    }
-    
-    use utils::math;
-    use utils::string_utils;
+    // 使用文件末尾定义的 utils 模块
+    use crate::_09_modules::utils::math;
+    use crate::_09_modules::utils::string_utils;
     
     println!("5 + 3 = {}", math::add(5, 3));
     println!("5! = {}", math::factorial(5));
@@ -337,18 +311,7 @@ pub fn run() {
     // #[cfg(feature = "my_feature")] - 条件编译
     // #[doc = "..."] - 文档注释
     
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-        use super::utils::math;
-        
-        #[test]
-        fn test_add() {
-            assert_eq!(math::add(2, 3), 5);
-        }
-    }
-    
-    println!("测试模块只在 cargo test 时编译");
+    println!("测试模块定义在文件末尾，只在 cargo test 时编译");
 
     // -------------------------------------------------------------------------
     // 14. 模块私有性规则总结
@@ -362,4 +325,59 @@ pub fn run() {
     // 4. 枚举变体继承枚举的可见性
     
     println!("模块系统帮助封装和组织代码，提高可维护性");
+}
+
+// -------------------------------------------------------------------------
+// 工具库模块（函数外部定义）
+// -------------------------------------------------------------------------
+mod utils {
+    pub mod math {
+        pub fn add(a: i32, b: i32) -> i32 {
+            a + b
+        }
+        
+        pub fn multiply(a: i32, b: i32) -> i32 {
+            a * b
+        }
+        
+        pub fn factorial(n: u64) -> u64 {
+            if n <= 1 { 1 } else { n * factorial(n - 1) }
+        }
+    }
+    
+    pub mod string_utils {
+        pub fn reverse(s: &str) -> String {
+            s.chars().rev().collect()
+        }
+        
+        pub fn is_palindrome(s: &str) -> bool {
+            let reversed: String = s.chars().rev().collect();
+            s.eq_ignore_ascii_case(&reversed)
+        }
+    }
+}
+
+// -------------------------------------------------------------------------
+// 测试模块
+// -------------------------------------------------------------------------
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use super::utils::math;
+    
+    #[test]
+    fn test_add() {
+        assert_eq!(math::add(2, 3), 5);
+    }
+    
+    #[test]
+    fn test_factorial() {
+        assert_eq!(math::factorial(5), 120);
+    }
+    
+    #[test]
+    fn test_reverse() {
+        use utils::string_utils;
+        assert_eq!(string_utils::reverse("hello"), "olleh");
+    }
 }
