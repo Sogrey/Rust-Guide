@@ -307,11 +307,54 @@ pub fn run() {
     // -------------------------------------------------------------------------
     println!("\n【13. 属性与模块】\n");
     
-    // #[cfg(test)] - 测试模块
-    // #[cfg(feature = "my_feature")] - 条件编译
-    // #[doc = "..."] - 文档注释
+    // #[cfg(test)] - 测试模块（仅在测试时编译）
+    // 已在文件末尾定义了 #[cfg(test)] mod tests
     
-    println!("测试模块定义在文件末尾，只在 cargo test 时编译");
+    // #[cfg(feature = "my_feature")] - 条件编译示例
+    // 在 Cargo.toml 中定义：[features] my_feature = []
+    // #[cfg(feature = "my_feature")]
+    // fn feature_function() {
+    //     println!("此函数仅在启用 my_feature 特性时编译");
+    // }
+    
+    // #[doc = "..."] - 文档注释示例
+    /// 计算两个数的和
+    /// 
+    /// # 参数
+    /// - `a`: 第一个数
+    /// - `b`: 第二个数
+    /// 
+    /// # 返回值
+    /// 返回 a + b 的结果
+    /// 
+    /// # 示例
+    /// ```
+    /// let result = add_numbers(2, 3);
+    /// assert_eq!(result, 5);
+    /// ```
+    fn add_numbers(a: i32, b: i32) -> i32 {
+        a + b
+    }
+    
+    // 使用文档注释的函数
+    println!("文档注释示例: 2 + 3 = {}", add_numbers(2, 3));
+    
+    // #[allow(...)] - 允许特定警告
+    #[allow(unused_variables)]
+    let unused_var = 42; // 不会产生警告
+    
+    // #[derive(...)] - 自动派生 trait
+    #[derive(Debug, Clone, PartialEq)]
+    struct Point {
+        x: i32,
+        y: i32,
+    }
+    
+    let p1 = Point { x: 10, y: 20 };
+    let p2 = p1.clone();
+    println!("派生示例: {:?}", p1);
+    println!("克隆示例: {:?}", p2);
+    println!("相等比较: {}", p1 == p2);
 
     // -------------------------------------------------------------------------
     // 14. 模块私有性规则总结
